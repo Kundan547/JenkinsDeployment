@@ -1,7 +1,7 @@
 # Use the official Nginx image as the base image
 FROM nginx:alpine
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /usr/share/nginx/html
 
 # Remove the default Nginx static content
@@ -15,4 +15,3 @@ EXPOSE 80
 
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]
-
