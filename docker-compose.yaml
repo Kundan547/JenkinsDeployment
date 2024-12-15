@@ -6,10 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80" # Maps port 80 in the container to port 8080 on the host
+      - "8080:80" 
     volumes:
-      - ./assets:/usr/share/nginx/html/assets # Mount the assets directory
-      - ./index.html:/usr/share/nginx/html/index.html # Mount the index.html
+      - ./assets:/usr/share/nginx/html/assets 
+      - ./index.html:/usr/share/nginx/html/index.html 
     depends_on:
       - app
 
