@@ -14,7 +14,7 @@ services:
       - app
 
   app:
-    image: node:16 # Example if you need a backend service like Node.js
+    image: node:16
     working_dir: /app
     volumes:
       - .:/app
