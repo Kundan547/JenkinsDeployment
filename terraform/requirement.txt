@@ -1,0 +1,12 @@
+# To use Terraform as Infrastructure as code.
+
+
+#Initialize terraform.
+terraform init
+
+#Preview chnages
+terraform plan
+
+#Deploy the resources
+terraform apply
+
