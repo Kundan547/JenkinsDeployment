@@ -1,0 +1,8 @@
+---
+- name: Deploy Web Application on AWS EC2
+  hosts: webservers
+  become: yes
+
+  roles:
+    - webserver
+
