@@ -1,0 +1,7 @@
+[webservers]
+your-aws-instance-public-ip
+
+[webservers:vars]
+ansible_ssh_private_key_file=/path/to/your/private-key.pem
+ansible_python_interpreter=/usr/bin/python3
+

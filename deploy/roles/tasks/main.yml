@@ -1,0 +1,42 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install required packages
+  apt:
+    name:
+      - nginx
+      - python3-pip
+      - python3-dev
+      - virtualenv
+    state: present
+
+- name: Create a directory for the project
+  file:
+    path: /var/www/html/your-project
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Copy website files to the server
+  copy:
+    src: /path/to/your/local/project/
+    dest: /var/www/html/your-project/
+    owner: ubuntu
+    group: ubuntu
+    mode: '0644'
+    recurse: yes
+
+- name: Copy Nginx config file
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/sites-available/default
+
+- name: Enable and start Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
